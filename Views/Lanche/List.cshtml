@@ -1,0 +1,21 @@
+﻿@model LancheListViewModel
+
+<!-- ViewData e ViewBag carregam informações do controller para a view -->
+
+<div>
+	<h2>@Model.CategoriaAtual</h2>
+</div>
+<!-- 
+<h2>@ViewData["Data"]</h2>
+<hr/>
+<h3>@ViewBag.Total @ViewBag.TotalLanches</h3>
+<hr />
+-->
+
+<div class="container">
+	<div class="row">
+@foreach (var lanche in Model.Lanches) {
+	<partial name="_LanchesResumo" for="@lanche"/>
+}
+	</div>
+</div>
